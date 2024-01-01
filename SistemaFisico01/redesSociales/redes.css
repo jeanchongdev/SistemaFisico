@@ -1,0 +1,289 @@
+/*
+    Auther: Jean Pierre Chong
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.greetings{
+  font-size: 2rem;
+  font-weight: 900;
+}
+.greetings > span{
+  animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+  0%, 100%{
+      color: #fff;
+      text-shadow: 0 0 12px #23eca9, 0 0 50px #23eca9, 0 0 100px #23eca9;
+  }
+  10%, 90%{
+      color: #696565;
+      text-shadow: none;
+  }
+}
+.greetings > span:nth-child(2){
+  animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+  animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+  animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+  animation-delay: .8s;
+}
+
+.hola1{
+  margin-top: -20%;
+}
+
+.hola{
+  margin-top: -8%;
+}
+
+
+
+
+
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+  background: linear-gradient(315deg, #ffffff, #d7e1ec);
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+
+.wrapper .icon a {
+  color: #000; /* Color inicial de los iconos */
+  /*transition: color 0.3s ease; /* Transición suave del color */
+}
+
+.wrapper .icon a:hover {
+  color: #fff; /* Color de los iconos al pasar el mouse */
+}
+
+
+
+
+button {
+  border: none;
+  position: relative;
+  width: 200px;
+  height: 73px;
+  padding: 0;
+  z-index: 2;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='868' width='2500' viewBox='0 0 726 252.17'%3E%3Cpath d='M483.92 0S481.38 24.71 466 40.11c-11.74 11.74-24.09 12.66-40.26 15.07-9.42 1.41-29.7 3.77-34.81-.79-2.37-2.11-3-21-3.22-27.62-.21-6.92-1.36-16.52-2.82-18-.75 3.06-2.49 11.53-3.09 13.61S378.49 34.3 378 36a85.13 85.13 0 0 0-30.09 0c-.46-1.67-3.17-11.48-3.77-13.56s-2.34-10.55-3.09-13.61c-1.45 1.45-2.61 11.05-2.82 18-.21 6.67-.84 25.51-3.22 27.62-5.11 4.56-25.38 2.2-34.8.79-16.16-2.47-28.51-3.39-40.21-15.13C244.57 24.71 242 0 242 0H0s69.52 22.74 97.52 68.59c16.56 27.11 14.14 58.49 9.92 74.73C170 140 221.46 140 273 158.57c69.23 24.93 83.2 76.19 90 93.6 6.77-17.41 20.75-68.67 90-93.6 51.54-18.56 103-18.59 165.56-15.25-4.21-16.24-6.63-47.62 9.93-74.73C656.43 22.74 726 0 726 0z'/%3E%3C/svg%3E") no-repeat 50% 50%;
+  -webkit-mask-size: 100%;
+  background-color: transparent;
+  transform: translateY(8px)
+ }
+ 
+ button:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0px 0 0 0 white;
+  transition: all 2s ease;
+ }
+ 
+ button:hover:after {
+  box-shadow: 0px -13px 56px 12px #ffffffa6;
+ }
+ 
+ button span {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 100;
+  left: 50%;
+  top: 39%;
+  letter-spacing: 3px;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  color: black;
+  transition: all 2s ease;
+ }
+ 
+ button:hover span {
+  color: white;
+ }
+ 
+ button:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: black;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+ }
+ 
+ button:hover:before {
+  width: 100%;
+}
+
+.boton{
+  margin-top: -5%;
+}
+ 
+
+.div{
+margin-top: -25%;
+}
+
+/* Estilos para dispositivos con pantalla ancha */
+.icon {
+  margin: 20px;
+}
+
+/* Estilos para dispositivos con pantalla mediana (tabletas, etc.) */
+@media screen and (max-width: 768px) {
+  .icon {
+      margin: 15px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .icon {
+      margin: 0px;
+  }
+  
+}
+
+/* Estilos para dispositivos con pantalla pequeña (teléfonos móviles, etc.) */
+@media screen and (max-width: 480px) {
+  .icon {
+      margin: 10px;
+  }
+}

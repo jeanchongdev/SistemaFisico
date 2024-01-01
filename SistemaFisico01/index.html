@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/kursor/dist/kursor.css">
+    <link rel="stylesheet" href="frame/frame.css">
+    <link rel="icon" href="icono/usuario.ico">
+    <title>Login</title>
+</head>
+<body>
+  <div class="login-box">
+  <h2 class=" animate__bounce my-element">Iniciar sesión</h2>
+  <form action="validar.php" method="post">
+    <div class="user-box">
+      <input type="text" name="usuario" id="username" required>
+      <label class=" animate__slideInLeft label">Usuario</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" id="password" required>
+      <label class=" animate__slideInLeft label">Contraseña</label>
+    </div>
+    <div id="error-message" class="error-message"></div>
+    <!--<a href="https://github.com/jeanchong15" id="login-link" onclick="checkCredentials(event)">-->
+        <button>
+            <span>INICIAR</span>
+        </button>
+  </form>
+</div>
+
+    <!--<script src="script.js"></script>-->
+    <script src="https://unpkg.com/kursor"></script>
+    <script>
+        new kursor({
+            type: 2,
+            removeDefaultCursor: true,
+            color: '#000'
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/*animate__animated*/
+
+.my-element {
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 2s; 
+}
+
+.label {
+    margin: 0 0.5rem;
+  
+    animation: slideInLeft; 
+    animation-duration: 2s; 
+}
+
+/*-------------------------> MRU*/
+.mruh1{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> CINEMATICA*/
+.cinematica{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> DINAMICA*/
+.dinamica{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> ELECTROSTATICA*/
+.electrostatica{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> ESTATICA*/
+.estatica{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> LOGARITMOS*/
+.logaritmos{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> TEMPERATURA*/
+.temperatura{
+    margin: 0 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+
+/*-------------------------> TITULO*/
+.titulo{
+    margin:  1.0rem 0.5rem;
+  
+    animation: bounce; 
+    animation-duration: 1s; 
+}
+/*-----------------------------------*/
+

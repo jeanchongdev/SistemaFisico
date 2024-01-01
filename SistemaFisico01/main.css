@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap'); /*para importar la fuente de google fonts*/
+:root{ /* nos serira para colores, variables modo oscuro y para cambiar varolore facil y lo tendremos mas organizado*/
+    --color-barra-laterar:rgb(255,255,255); /*variable para almacenar el color de la barra lateral*/
+
+    --color-texto:rgb(0,0,0); /*variable para los colores de los textos*/
+    --color-texto-menu:rgb(134,136,144); /*variable para los textos del menu*/
+
+    --color-menu-hover:rgb(238,238,238); /*variable para el color del menu*/
+    --color-menu-hover-texto:rgb(0,0,0); /*variable para el color del texto del menu*/
+
+    --color-boton:rgb(0,0,0); /*variable para el color del boton*/
+    --color-boton-texto:rgb(255,255,255); /*variable para el color del texto del boton*/
+
+    --color-linea:rgb(180,180,180); /*variable para el color de la linea*/
+
+    --color-switch-base:rgb(201,202,206); /*variable para el color del switch*/
+    --color-switch-circulo:rgb(241,241,241); /*variable para el color del circulo*/
+
+    --color-scroll:rgb(192,192,192); /*variable para el color del scroll*/
+    --color-scroll-hover:rgb(134,134,134);  /*variable para el color del scroll hover*/
+}
+
+.dark-mode{/*nos servira para el momendo de poner modo oscuro en nuestras variables*/
+    --color-barra-laterar:rgb(44,45,49); /*colores para el modo oscuro*/
+
+    --color-texto:rgb(255,255,255); /*colores para el modo oscuro*/
+    --color-texto-menu:rgb(110,110,117); /*colores para el modo oscuro*/
+
+    --color-menu-hover:rgb(0,0,0);  /*colores para el modo oscuro*/
+    --color-menu-hover-texto:rgb(238,238,238); /*colores para el modo oscuro*/
+
+    --color-boton:rgb(255,255,255); /*colores para el modo oscuro*/
+    --color-boton-texto:rgb(0,0,0);     /*colores para el modo oscuro*/
+
+    --color-linea:rgb(90,90,90); /*colores para el modo oscuro*/
+
+    --color-switch-base:rgb(39,205,64); /*colores para el modo oscuro*/
+    --color-switch-circulo:rgb(255,255,255); /*colores para el modo oscuro*/
+
+    --color-scroll:rgb(68,69,74); /*colores para el modo oscuro*/
+    --color-scroll-hover:rgb(85,85,85); /*colores para el modo oscuro*/
+}
+
+*{/*selector universal para  todos los elementos*/
+    margin: 0; /*para que no se vea el espacio entre los elementos*/
+    padding: 0; /*para que no se vea el espacio entre los elementos*/
+    box-sizing: border-box; /*para que no se salga de la pagina*/
+    font-family: 'Outfit', sans-serif; /*para la fuente de google fonts*/
+}
+
+/*------------------------------------- daremos estilos al bodi*/
+body{
+    /*border: 2px solid red;*/
+    height: 100vh; /*altura.......viewport haid*/
+    width: 100%; /*ancho*/
+    background-color: darkcyan;
+}
+/*-------------------------------------------------------------*/
+
+
+
+/*------------------------> Menú*/
+.menu{
+    /*border: 2px solid red;*/
+    position: fixed;
+    width: 50px; /*ancho*/
+    height: 50px; /*altura*/
+    font-size: 30px; /*tamaño del icono*/
+    display: none; /*boton oculto*/
+    justify-content: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    align-items: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    border-radius: 50%; /*para darle un redondeado al icono*/
+    /*cursor: pointer;*/
+    background-color: var(--color-boton); /*color de fondo del boton para el menu*/
+    color: var(--color-boton-texto); /*color de texto del boton para el menu*/
+    right: 15px; /*para que se vea el boton en la parte derecha*/
+    top: 15px; /*para que se vea el boton en la parte superior*/
+    z-index: 100; /*para  mostrar todo elcontenido de la pagina, detras del boton del munú*/
+}
+
+
+
+/*---------------------------------------------------------> Barra Lateral*/
+.barra-lateral{
+    /*border: 2px solid red;*/
+    position: fixed; /*para que se quede fijo el texto*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    flex-direction: column; /*pagina responsibva*/ /*para que se acomode el icono y el texto*/
+    justify-content: space-between; /*para que ocupe el mayor espacio posible*//*para que se acomode el icono y el texto*/
+    width: 250px; /*ancho*/
+    height: 100%; /*altura*/
+    overflow: hidden; /*para que no se salga de la pagina*/
+    padding: 20px 15px; /*arriba,abajo,izquierda,derecha*/ /*para que no se pegue a los bordes*/
+    background-color: var(--color-barra-laterar); /*color de la barra lateral*/
+    transition: width 0.5s ease,background-color 0.3s ease,left 0.5s ease; /*para que se vea la transicion del modo oscuro y para responsive del icono*/
+    z-index: 50; /*para  mostrar todo elcontenido de lapagina, detras del boton del munú*/
+}
+/*----------------------------------------------------------------------------------------------------------*/
+
+
+
+/*-------------------------------- nimi barra lateral*/
+.mini-barra-lateral{
+    width: 80px; /*ancho*/
+}
+/*----------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------- Barra Lateral....sera para todos los span*/
+
+.barra-lateral span{/*seraa para todos los span de la brra lateral y tendran el mismo estilo*/
+    /*border: 2px solid red;*/
+    width: 100px;/*ancho para los  spam*/ 
+    white-space: nowrap; /*para que no se salga de la pagina*/ /*-------*/ /*para evitar en salto de linea de los textos de los span*/
+    font-size: 18px; /*tamaño de letra*/
+    text-align: left; /*alineacion de texto*/
+    opacity: 1; /*para que se vea el texto*/
+    transition: opacity 0.5s ease,width 0.5s ease; /*para que se vea el texto*/ /*Aqui el width para la transicion*/
+}
+.barra-lateral span.oculto{
+    opacity: 0;  /*para que se oculte el texto*/
+    width: 0;  /*transition para spam*/ 
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
+
+/*-------------------------------------------> Nombre de la pagina*/
+.barra-lateral .nombre-pagina{ /*para el nombre de la pagina*/
+    /*border: 2px solid red;*/ 
+    width: 100%; /*ancho*/  
+    height: 45px; /*altura*/
+    color: var(--color-texto); /*color de texto*/
+    margin-bottom: 40px;/*para separarlo del boton*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    align-items: center; /*para que se acomode el icono y el texto*/   
+}
+/*-------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------> Icono*/
+.barra-lateral .nombre-pagina ion-icon{
+    /*border: 2px solid red;*/
+    min-width: 50px;   /*ancho minimo del icono*/ 
+    font-size: 40px;   /*tamaño de icono*/
+    /*cursor: pointer;*/ /*para que se vea el cursor*/
+}
+/*------------------------------------------------*/
+
+
+/*----------------------------------------------------> Texto*/
+.barra-lateral .nombre-pagina span{
+    /*border: 2px solid red;*/ 
+    font-size: 25px;   /*tamaño de letra*/ 
+    margin-left: 5px;  /*separar letra del icono*/ 
+    opacity: 1;       /*para que se vea el texto*/
+    transition: opacity 0.5s ease; /*para que se vea el texto*/
+}
+/*---------------------------------------------------------*/
+
+
+/*----------------------------------------------- oculto*/
+.barra-lateral .nombre-pagina span.oculto{ /*para que se oculte el texto*/
+    opacity: 0; /*para que se oculte el texto*/
+}
+/*---------------------------------------------------------*/
+
+
+/*--------------------------------------------- estilos para el sapan del nombre-pagina*/
+.barra-lateral .nombre-pagina span{
+    margin-left: 5px; /*separar letra del icono*/
+    font-size: 25px;  /*tamaño de letra*/
+}
+
+
+/*--------------------------------------------------- Botón*/
+.barra-lateral .boton{
+    text-decoration: none;
+    width: 100%; /*ancho*/ 
+    height: 45px; /*altura*/
+    margin-bottom: 20px; /*para separar los elementos de la lista del boton*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    align-items: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    justify-content: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    border: none; /*para que no se vea el borde*/
+    border-radius: 10px; /*para darle un redondeado al boton*/ 
+    background-color: var(--color-boton); /*color de fondo del boton*/
+    color: var(--color-boton-texto); /*color de texto del boton*/
+}
+/*--------------------------------------------------------------*/
+
+
+/*----------------------------------------------------> Icono*/
+.barra-lateral .boton ion-icon{ 
+    /*border: 2px solid red;*/
+    min-width: 50px; /*ancho minimo del icono*/
+    font-size: 25px; /*tamaño de icono*/
+}
+/*--------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------> para responsive*/
+/*--------------------------------------> Menú Navegación*/
+.barra-lateral .navegacion{ /*unn escrol para la pagina de navegacion*/
+    height: 100%; /*altura disponible*/
+    overflow-y: auto; /*para que se vea el scroll*/
+    overflow-x: hidden; /*para que no se vea el scroll*/
+}
+.barra-lateral .navegacion::-webkit-scrollbar{ /*para el scroll*/ /*usamos el selector*/
+    width: 5px; /*ancho*/
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb{ /*para el scroll*/ /*usamos el selector*/
+    background-color: var(--color-scroll); /*color de fondo del scroll*/
+    border-radius: 5px;
+}
+.barra-lateral .navegacion::-webkit-scrollbar-thumb:hover{ /*para el scroll*/ /*usamos el selector*/
+    background-color: var(--color-scroll-hover); /*color de fondo del scroll*/
+}
+/*--------------------------------------------------------------*/
+
+
+/*------------------------------------> Lista*/
+.barra-lateral .navegacion li{ /*para la lista*/
+    /*border: 2px solid red;*/
+    list-style: none; /*para quitar los puntos de la lista*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    margin-bottom: 5px; /*para separar los elementos de la lista*/
+}
+/*------------------------------------------*/
+
+
+/*---------------------------------------> Enlace*/
+.barra-lateral .navegacion a{ /*para el enlace*/
+    /*border: 2px solid red;*/
+    width: 100%;  /*ancho*/
+    height: 45px;  /*altura*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    align-items: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    text-decoration: none; /*para que no se vea el subrayado del enlace*/
+    border-radius: 10px; /*para darle un redondeado al boton*/
+    color: var(--color-texto-menu); /*color de texto del enlace*/
+}
+/*-----------------------------------------------*/
+
+/*------------------------------------------------- estilos para los enlases*/
+.barra-lateral .navegacion a:hover{ /*para el enlace*/
+    background-color: var(--color-menu-hover); /*color de fondo del enlace*/
+    color: var(--color-menu-hover-texto); /*color de texto del enlace*/ 
+}
+
+/*--------------------------------------> estilos a los iconos Icono*/
+.barra-lateral .navegacion ion-icon{ /*para el icono*/
+    /*border: 2px solid red;*/
+    min-width: 50px; /*ancho minimo del icono*/
+    font-size: 20px; /*tamaño de icono*/
+}
+/*-----------------------------------------------------*/
+
+
+
+
+/*------------------------------------------------> Linea*/
+.barra-lateral .linea{ /*para la linea*/
+    width: 100%; /*ancho*/
+    height: 1px; /*altura*/
+    margin-top: 15px; 
+    background-color: var(--color-linea); /*color de la linea*/
+}
+/*-----------------------------------------------------*/
+
+
+
+
+/*-------------------------------------------------------------------------> Modo Oscuro*/
+.barra-lateral .modo-oscuro{ /*para el modo oscuro*/
+    /*border: 2px solid red;*/
+    width: 100%; /*ancho*/
+    margin-bottom: 60px; /*para separar los elementos de la lista del boton*/
+    border-radius: 10px; /*para darle un redondeado al boton*/
+    display: flex; /*para que se acomode el switch*/
+    justify-content: space-between; /*para que se acomode el switch o espacio posible entre los elemenos*/
+}
+.barra-lateral .modo-oscuro .info{ /*para el modo oscuro*/   /*contiene el icono de la luna*/
+    /*border: 2px solid red;*/
+    width: 150px; /*ancho*/
+    height: 45px; /*altura*/
+    overflow: hidden; /*para el switch para que no sobresalgan sus elementos sobre el */
+    display: flex; /*para que se acomode el switch*/
+    align-items: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    color: var(--color-texto-menu); /*color de texto del enlace*/
+}
+.barra-lateral .modo-oscuro ion-icon{ /*para el modo oscuro*/
+    /*border: 2px solid red;*/
+    width: 50px; /*ancho*/
+    font-size: 20px; /*tamaño de icono*/
+}
+/*-------------------------------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------> switch*/
+.barra-lateral .modo-oscuro .switch{ /*para el modo oscuro*/
+    /*border: 2px solid red;*/
+    display: flex; /*para que se acomode el switch*/
+    align-items: center; /*vertical*/
+    justify-content: center; /*orizontalmente*/
+    min-width: 50px; /*ancho minimo del icono*/
+    height: 45px; /*altura*/
+    /*cursor: pointer;*/
+}
+/*------------------------------------------------------------*/
+
+/*----------------------------------------------------------- base*/
+.barra-lateral .modo-oscuro .base{ /*para el modo oscuro*/
+    position: relative; /*mover redondo para el modo oscuro*/
+    display: flex; /*para que se acomode el switch*/
+    align-items: center; /*vertical*/
+    width: 35px; /*ancho*/
+    height: 20px; /*altura*/
+    background-color: var(--color-switch-base); /*color de fondo del switch*/
+    border-radius: 50px; /*para darle un redondeado al boton*/
+}
+/*------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------ circulo*/
+.barra-lateral .modo-oscuro .circulo{ /*para el modo oscuro*/
+    position: absolute; /*mover redondo para el modo oscuro*/
+    width: 18px; /*ancho*/
+    height: 90%; /*altura   */
+    background-color: var(--color-switch-circulo); /*color de fondo del switch del circulo*/
+    border-radius: 50%; /*para darle un redondeado al circulo*/
+    left: 2px; /*mover redondo para el modo oscuro asi la izquierda*/
+    transition: left 0.5s ease; /*para el circulo*/
+}
+
+.barra-lateral .modo-oscuro .circulo.prendido{ /*para el modo oscuro shwith*/
+    left: 15px; /*mover redondo para el modo oscuro asi la derecha*/
+}
+/*------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------> Usuario*/
+.barra-lateral .usuario{
+    /*border: 2px solid red;*/ 
+    width: 100%; /*ancho*/ 
+    display: flex; /*para que se acomode el icono y el texto*/
+}
+.barra-lateral .usuario img{ /*para el icono*/
+    width: 20px; /*ancho*/
+    min-width: 20px; /*ancho minimo del icono*/
+    border-radius: 10px; /*para darle un redondeado al boton*/
+}
+.barra-lateral .usuario .info-usuario{ 
+    /*border: 2px solid red;*/
+    width: 100%; /*ancho*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    align-items: center; /*centramos sus elementos internos tanto vertical como horizontalmente*/
+    justify-content: space-between; /*para que se acomode el switch o espacio posible entre los elemenos*/
+    color: var(--color-texto); /*color de texto del enlace*/
+    overflow: hidden; /*para el switch para que no sobresalgan sus elementos sobre el */
+}
+.barra-lateral .usuario .nombre-email{
+    /*border: 2px solid red;*/
+    width: 100%; /*ancho*/
+    display: flex; /*para que se acomode el icono y el texto*/
+    flex-direction: column; /*para que se acomode el icono y el texto*/
+    margin-left: 5px; /*separar letra del icono*/
+}
+.barra-lateral .usuario .nombre{
+    font-size: 15px; /*tamaño de letra*/
+    font-weight: 600; /*para que se vea en negrita*/
+}
+.barra-lateral .usuario .email{
+    font-size: 13px; /*tamaño de letra*/
+}
+.barra-lateral .usuario ion-icon{
+    font-size: 25px; /*tamaño de icono*/
+}
+.enlase{
+    color: #000;
+}
+/*----------------------------------------------*/
+
+
+/*-----------------> Main*/
+
+/*#inbox{ para id
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+/*#github{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+/*#linkedin{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+/*#facebook{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+/*#instagram{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+/*#twitter{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+/*#tiktok{
+    background-color: var(--color-menu-hover);
+    color: var(--color-menu-hover-texto);
+}*/
+
+/*----------------------------------------> ESTILOS PARA EL MAIN*/
+main{ /*para el main*/
+    margin-left: 250px; /*para que se vea el main*/
+    padding: 20px; /*arriba,abajo,izquierda,derecha*/ /*para que no se pegue a los bordes*/
+    transition: margin-left 0.5s ease; /*para que se vea la transicion del modo oscuro y para responsive del icono*/
+}
+main.min-main{
+    margin-left: 80px; /*para que se vea el main*/
+}
+
+
+.imgfisica{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+main .p{
+    /*font-size: 20px;*/
+    /*font-weight: bold;*/
+    text-align: justify;
+}
+
+
+/*----------------------------------------> FIN ESTILOS MAIN*/
+
+
+
+
+
+
+/*-------------------> Responsive*/
+@media (max-height: 660px){
+    .barra-lateral .nombre-pagina{
+        margin-bottom: 5px;
+    }
+    .barra-lateral .modo-oscuro{
+        margin-bottom: 3px;
+    }
+}
+@media (max-width: 600px){
+    .barra-lateral{
+        position: fixed;
+        left: -250px;
+    }
+    .max-barra-lateral{
+        left: 0; /*barra lateral*/
+    }
+    .menu{
+        display: flex;
+    }
+    .menu ion-icon:nth-child(2){ /*segundo icono del menú*/
+        display: none;
+    }
+    main{
+        margin-left: 0;
+    }
+    main.min-main{
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
